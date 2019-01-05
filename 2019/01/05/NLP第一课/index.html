@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="interview,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="面试常见问题1234567char s[10] = &amp;#123;&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;,&amp;apos;d&amp;apos;,&amp;apos;e&amp;apos;,&amp;apos;f&amp;apos;&amp;#125;;char *p = NULL;sizeof(s) = 10sizeof(p) = 4; sizeof()概念sizeof是C语言的一种单目操作符，如C语言的">
-<meta name="keywords" content="interview">
+<meta name="description" content="title: NLP自学——词向量的理解  date: 2018-12-03 23:41:28  tags:  NLP GloVe 实践   词嵌入使用gensim工具，先下载工具 1pip install --upgrade gensim Load Stanford’s GloVe Embeddingsword2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sizeof面试总结">
-<meta property="og:url" content="http://yoursite.com/2018/12/17/sizeof()/index.html">
+<meta property="og:title" content="AndrewMoTechStep">
+<meta property="og:url" content="http://yoursite.com/2019/01/05/NLP第一课/index.html">
 <meta property="og:site_name" content="AndrewMoTechStep">
-<meta property="og:description" content="面试常见问题1234567char s[10] = &amp;#123;&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;,&amp;apos;d&amp;apos;,&amp;apos;e&amp;apos;,&amp;apos;f&amp;apos;&amp;#125;;char *p = NULL;sizeof(s) = 10sizeof(p) = 4; sizeof()概念sizeof是C语言的一种单目操作符，如C语言的">
+<meta property="og:description" content="title: NLP自学——词向量的理解  date: 2018-12-03 23:41:28  tags:  NLP GloVe 实践   词嵌入使用gensim工具，先下载工具 1pip install --upgrade gensim Load Stanford’s GloVe Embeddingsword2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T14:57:09.609Z">
+<meta property="og:updated_time" content="2019-01-05T14:41:39.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sizeof面试总结">
-<meta name="twitter:description" content="面试常见问题1234567char s[10] = &amp;#123;&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;,&amp;apos;d&amp;apos;,&amp;apos;e&amp;apos;,&amp;apos;f&amp;apos;&amp;#125;;char *p = NULL;sizeof(s) = 10sizeof(p) = 4; sizeof()概念sizeof是C语言的一种单目操作符，如C语言的">
+<meta name="twitter:title" content="AndrewMoTechStep">
+<meta name="twitter:description" content="title: NLP自学——词向量的理解  date: 2018-12-03 23:41:28  tags:  NLP GloVe 实践   词嵌入使用gensim工具，先下载工具 1pip install --upgrade gensim Load Stanford’s GloVe Embeddingsword2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/17/sizeof()/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/05/NLP第一课/">
 
 
 
 
 
-  <title>sizeof面试总结 | AndrewMoTechStep</title>
+  <title> | AndrewMoTechStep</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/sizeof()/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/05/NLP第一课/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AndrewMo">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">sizeof面试总结</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T23:41:28+08:00">
-                2018-12-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-05T17:43:58+08:00">
+                2019-01-05
               </time>
             
 
@@ -300,34 +299,37 @@
       
 
       
-        <h1 id="面试常见问题"><a href="#面试常见问题" class="headerlink" title="面试常见问题"></a>面试常见问题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">char s[10] = &#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;&#125;;</span><br><span class="line"></span><br><span class="line">char *p = NULL;</span><br><span class="line"></span><br><span class="line">sizeof(s) = 10</span><br><span class="line"></span><br><span class="line">sizeof(p) = 4;</span><br></pre></td></tr></table></figure>
-<h2 id="sizeof-概念"><a href="#sizeof-概念" class="headerlink" title="sizeof()概念"></a>sizeof()概念</h2><p>sizeof是C语言的一种单目操作符，如C语言的其他操作符++、–等。它并不是函数。sizeof操作符以字节形式给出了其操作数的存储大小。操作数可以是一个表达式或括在括号内的类型名。操作数的存储大小由操作数的类型决定。</p>
-<h2 id="sizeof的使用方法"><a href="#sizeof的使用方法" class="headerlink" title="sizeof的使用方法"></a>sizeof的使用方法</h2><p>1、用于数据类型</p>
-<p>sizeof使用形式：sizeof(type)；</p>
-<p><strong>note：数据类型必须用括号括住，如sizeof(int)。</strong></p>
-<p>2、用于变量</p>
-<p>sizeof使用形式：sizeof(var_name)或sizeof var_name</p>
-<p>变量名可以不用括号括住。带括号的用法更普遍，大多数程序员都用这种形式。</p>
-<p><strong>note：sizeof操作符不用用于函数类型，不完全类型或者字段</strong></p>
-<h2 id="sizeof的结果"><a href="#sizeof的结果" class="headerlink" title="sizeof的结果"></a>sizeof的结果</h2><p>sizeof操作符的结果类型是size_t,它在头文件&lt;stddef.h&gt;中typedef为unsigned int类型。该类型保证能容纳实现做简历的最大对象的字节大小。</p>
-<p>1、操作数据有类型char，unsigned char或signed char，其结果等于1</p>
-<p>ANSI C正式规定字符类型为1字节</p>
-<p>2、int、unsigned int、short int、unsigned short、long int、unsigned long、float、double、long double类型的sizeof在ANSI C中没有具体规定，大小依赖实现，一般可能分别为2、2、2、2、4、4、4、8、10.</p>
-<p>3、当操作数是指针时，sizeof依赖于编译器</p>
-<p>例如Microsoft C/C++ 7.0 中，near类指针字节数为2，far、huge类指针字节数为4。一般Unix的指针字节数为4.</p>
-<p>4、当操作数具有数组类型是，其结果是数组的总字节数。</p>
-<p>5、联合类型操作数的sizeof是其最大字节成员的字节数。</p>
-<h2 id="sizeof使用场合"><a href="#sizeof使用场合" class="headerlink" title="sizeof使用场合"></a>sizeof使用场合</h2><p>首先要明确sizeof不是函数，也不是一元运算符，它是个类似宏定义的特殊关键字，sizeof()。括号内的内容在编译过程中是不被编译的，而是被替代类型，如int a=8;  sizeof(a)。在编译过程中，不管a的值是什么，知识被替换成类型sizeof(int)，结果为4。如果sizeof(a=6)呢？也是一样地转换成a的类型，但是要注意，因为a=6是不被编译的，所以执行sizeof(a=6)后，a的值还是8，是不变的。</p>
-<p>①     sizeof操作符的一个主要用途是与存储分配和I/O系统那样的例程进行通信。例如：</p>
-<p>void *malloc(sizex_t size),</p>
-<p>size_t fread(void <em> ptr, size_t size, size_t nmemb, FILE </em> stream)</p>
-<p>②     用它可以看看某种类型的对象在内存中所占的单元。例如：</p>
-<p>void <em> memset(void </em> s, int c, sizeof(s))</p>
-<p>③在动态分配一对象时，可以让系统知道要分配多少内存。</p>
-<p>④便于一些类型的扩充。在Windows中有很多结构类型就有一个专门的字段用来存放该类型的字节大小。</p>
-<p>⑤由于操作数的字节数在实现时可能出现变化，建议在涉及操作数字节大小时用sizeof代替常量计算。</p>
-<p>⑥如果操作数是函数中的数组形参或函数类型的形参，sizeof给出其指针的大小。</p>
-<p>看剧刷到一句话：<strong>I don’t mind being alone, I just do not want to be insignificant</strong></p>
+        <hr>
+<p>  title: NLP自学——词向量的理解<br>  date: 2018-12-03 23:41:28<br>  tags:</p>
+<ul>
+<li>NLP</li>
+<li>GloVe</li>
+<li>实践</li>
+</ul>
+<hr>
+<h1 id="词嵌入"><a href="#词嵌入" class="headerlink" title="词嵌入"></a>词嵌入</h1><p>使用gensim工具，先下载工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade gensim</span><br></pre></td></tr></table></figure>
+<h2 id="Load-Stanford’s-GloVe-Embeddings"><a href="#Load-Stanford’s-GloVe-Embeddings" class="headerlink" title="Load Stanford’s GloVe Embeddings"></a>Load Stanford’s GloVe Embeddings</h2><p>word2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在NLP实际应用中偏向使用GloVe。</p>
+<p>像是word2vec一样，GloVe研究者提供了很多预训练模型供选择。gensim就是这么一个工具用来下载并使用这些预训练模型的。</p>
+<p>这里以载入glove.6B.100d.txt为例子。</p>
+<p>因为国内的渣网，直接去<a href="https://nlp.stanford.edu/projects/glove/下载极慢，建议百度网盘搜索相关资源下载好之后再载入。" target="_blank" rel="noopener">https://nlp.stanford.edu/projects/glove/下载极慢，建议百度网盘搜索相关资源下载好之后再载入。</a></p>
+<p>这里的glove.6B.100d.txt属于glove.6B.zip，链接<a href="https://pan.baidu.com/s/1xW5dImTYAM5UR3787WgeSg。下载好之后解压，里面有4个txt文件。" target="_blank" rel="noopener">https://pan.baidu.com/s/1xW5dImTYAM5UR3787WgeSg。下载好之后解压，里面有4个txt文件。</a></p>
+<p>要使用model装在必须先将txt文件转换成word2vec文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.scripts.glove2word2vec <span class="keyword">import</span> glove2word2vec</span><br><span class="line">glove_input_file = <span class="string">'glove.6B.100d.txt'</span></span><br><span class="line">word2vec_output_file = <span class="string">'glove.6B.100d.txt.word2vec'</span></span><br><span class="line">glove2word2vec(glove_input_file, word2vec_output_file)</span><br></pre></td></tr></table></figure>
+<p>然后装载模型，并且输出一个（king - man）+ woman = ？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> KeyedVectors</span><br><span class="line"><span class="comment"># load the Stanford GloVe model</span></span><br><span class="line">filename = <span class="string">'glove.6B.100d.txt.word2vec'</span></span><br><span class="line">model = KeyedVectors.load_word2vec_format(filename, binary=<span class="keyword">False</span>)</span><br><span class="line"><span class="comment"># calculate: (king - man) + woman = ?</span></span><br><span class="line">result = model.most_similar(positive=[<span class="string">'woman'</span>, <span class="string">'king'</span>], negative=[<span class="string">'man'</span>], topn=<span class="number">1</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p>结果是</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[(<span class="string">'queen'</span>, <span class="number">0.7698541283607483</span>)]</span><br></pre></td></tr></table></figure>
+<h2 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h2><p>通常为了将数据尽可能分开，我们倾向于使用更多的特征点，相当于把词映射到更多维的空间，但是对于观察来说，2-3D的坐标轴比较符合我们的习惯。这里就引入了对数据的降维操作。</p>
+<p>降维一般分为线性降维和非线性降维，比较典型的如下：</p>
+<ul>
+<li>线性降维：PCA（Principal Componets Analysis),LDA(Linear Discriminant Analysis), MDS(Classical Multidimensional Scaling)</li>
+<li>非线性降维：Isomap(Isometric Mapping),LLE(Locally Linear Embedding),LE(Laplacian Eigenmaps),非线性降维中用到的方法大多属于流形学习方法。</li>
+</ul>
+<p>详细介绍请看<a href="https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/</a></p>
+<p>这里只对T-SNE做简单介绍，T-SNE目的就是把X(原始高维数据)转换成Z(指定低维度的数据)。t-SNE首先将距离转换为条件概率来表达点与点之间的相似度，距离通过欧式距离算得，S(x^i,x^j)表示求 x^i,x^j之间的欧式距离。计算原始高维数据X与转换后的低维数据Z的公式如下所示。</p>
+<p>$$<br>P(x^j | x^i) = \frac{S(x^i,x^j)}{\sum_{k\neq i}S(x^i,x^k) }</p>
+<p>Q(z^j | z^i) = \frac{S’(z^i,z^j)}{\sum_{k\neq i}S’(z^i,z^k) }<br>$$<br>计算完X数据之间的的概率P(x^j | x^i) 和Z数据之间的概率$Q(z^j | z^i)$之后，接下来就是我们 的目的就是P和Q连个分布尽可能的接近，也就是要是如下公式的KL散度尽可能小。<br>$$<br>L = \sum KL(P(<em>|x^i)||Q(</em>|z^i)) = \sum \sum p(x^j|x^i)log\frac{P(x^j | x^i)}{Q(z^j | z^i)}<br>$$<br>T-SNE自从问世之后吊打一众降维算法，据说LargeVis比T-SNE还厉害，但是目还没有源码。让我们拭目以待。</p>
 
       
     </div>
@@ -343,12 +345,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/interview/" rel="tag"># interview</a>
-          
-        </div>
-      
 
       
       
@@ -358,8 +354,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/17/Tensorflow实现LSTM语言模型/" rel="next" title="LSTM模型（翻译）">
-                <i class="fa fa-chevron-left"></i> LSTM模型（翻译）
+              <a href="/2018/12/17/sizeof()/" rel="next" title="sizeof面试总结">
+                <i class="fa fa-chevron-left"></i> sizeof面试总结
               </a>
             
           </div>
@@ -367,10 +363,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/05/NLP第一课/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -493,7 +485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试常见问题"><span class="nav-number">1.</span> <span class="nav-text">面试常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof-概念"><span class="nav-number">1.1.</span> <span class="nav-text">sizeof()概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof的使用方法"><span class="nav-number">1.2.</span> <span class="nav-text">sizeof的使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof的结果"><span class="nav-number">1.3.</span> <span class="nav-text">sizeof的结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof使用场合"><span class="nav-number">1.4.</span> <span class="nav-text">sizeof使用场合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#词嵌入"><span class="nav-number">1.</span> <span class="nav-text">词嵌入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Stanford’s-GloVe-Embeddings"><span class="nav-number">1.1.</span> <span class="nav-text">Load Stanford’s GloVe Embeddings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据降维"><span class="nav-number">1.2.</span> <span class="nav-text">数据降维</span></a></li></ol></li></ol></div>
             
 
           </div>
