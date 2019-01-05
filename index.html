@@ -330,7 +330,7 @@
                 
               
 
-              <time title="创建时间：2019-01-05 23:41:28 / 修改时间：23:20:04" itemprop="dateCreated datePublished" datetime="2019-01-05T23:41:28+08:00">2019-01-05</time>
+              <time title="创建时间：2019-01-05 23:41:28 / 修改时间：23:48:55" itemprop="dateCreated datePublished" datetime="2019-01-05T23:41:28+08:00">2019-01-05</time>
             
 
             
@@ -390,155 +390,12 @@
 <li>非线性降维：Isomap(Isometric Mapping),LLE(Locally Linear Embedding),LE(Laplacian Eigenmaps),非线性降维中用到的方法大多属于流形学习方法。</li>
 </ul>
 <p>详细介绍请看<a href="https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">bingo</a></p>
-<p>这里只对T-SNE做简单介绍，T-SNE目的就是把X(原始高维数据)转换成Z(指定低维度的数据)。t-SNE首先将距离转换为条件概率来表达点与点之间的相似度，距离通过欧式距离算得，S(x^i,x^j)表示求 x^i,x^j之间的欧式距离。计算原始高维数据X与转换后的低维数据Z的公式如下所示。</p>
+<p>这里只对T-SNE做简单介绍，T-SNE目的就是把X(原始高维数据)转换成Z(指定低维度的数据)。t-SNE首先将距离转换为条件概率来表达点与点之间的相似度，距离通过欧式距离算得$S(x^i,x^j)$表示求 $(x^i,x^j)$之间的欧式距离。计算原始高维数据X与转换后的低维数据Z的公式如下所示。</p>
 <script type="math/tex; mode=display">
 P(x^j | x^i) = \frac{S(x^i,x^j)}{\sum_{k\neq i}S(x^i,x^k) }
-Q(z^j | z^i) = \frac{S'(z^i,z^j)}{\sum_{k\neq i}S'(z^i,z^k) }</script><p>计算完X数据之间的的概率P(x^j | x^i) 和Z数据之间的概率Q(z^j | z^i)之后，接下来就是我们 的目的就是P和Q连个分布尽可能的接近，也就是要是如下公式的KL散度尽可能小。</p>
+Q(z^j | z^i) = \frac{S'(z^i,z^j)}{\sum_{k\neq i}S'(z^i,z^k) }</script><p>计算完X数据之间的的概率$P(x^j | x^i)$ 和Z数据之间的概率$Q(z^j | z^i)$之后，接下来就是我们 的目的就是P和Q连个分布尽可能的接近，也就是要是如下公式的KL散度尽可能小。</p>
 <script type="math/tex; mode=display">
 L = \sum KL(P(*|x^i)||Q(*|z^i)) = \sum \sum p(x^j|x^i)log\frac{P(x^j | x^i)}{Q(z^j | z^i)}</script><p>T-SNE自从问世之后吊打一众降维算法，据说LargeVis比T-SNE还厉害，但是目还没有源码。让我们拭目以待。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/Tensorflow实现LSTM语言模型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AndrewMo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AndrewMoTechStep">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/17/Tensorflow实现LSTM语言模型/" class="post-title-link" itemprop="url">LSTM模型（翻译）</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-17 23:41:28 / 修改时间：22:57:51" itemprop="dateCreated datePublished" datetime="2018-12-17T23:41:28+08:00">2018-12-17</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="LSTM模型介绍"><a href="#LSTM模型介绍" class="headerlink" title="LSTM模型介绍"></a>LSTM模型介绍</h1><p>循环神经网络相比于传统神经网络增加了保留之前的信息的特点，就好比人每次思考不会从头开始。也就是说循环神经网络的一个神经元的某些输出可以作为其输入再次传入神经元，达到信息循环利用的目的。</p>
-<p>  我们将RNN中的循环展开成一个个串联的结构，发现每个结构除了有输入数据<em>_x<sub>i</sub>_</em>之外还有前一个结构的输出作为输入。这种串联结构天然适合时间序列数据的处理和分析。实际上每层神经网络又是相同的，所以我们只需要训练一层RNN。</p>
 
           
         
@@ -708,6 +565,149 @@ L = \sum KL(P(*|x^i)||Q(*|z^i)) = \sum \sum p(x^j|x^i)log\frac{P(x^j | x^i)}{Q(z
 <p>⑤由于操作数的字节数在实现时可能出现变化，建议在涉及操作数字节大小时用sizeof代替常量计算。</p>
 <p>⑥如果操作数是函数中的数组形参或函数类型的形参，sizeof给出其指针的大小。</p>
 <p>看剧刷到一句话：<strong>I don’t mind being alone, I just do not want to be insignificant</strong></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/Tensorflow实现LSTM语言模型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AndrewMo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AndrewMoTechStep">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/17/Tensorflow实现LSTM语言模型/" class="post-title-link" itemprop="url">LSTM模型（翻译）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-17 23:41:28 / 修改时间：22:57:51" itemprop="dateCreated datePublished" datetime="2018-12-17T23:41:28+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="LSTM模型介绍"><a href="#LSTM模型介绍" class="headerlink" title="LSTM模型介绍"></a>LSTM模型介绍</h1><p>循环神经网络相比于传统神经网络增加了保留之前的信息的特点，就好比人每次思考不会从头开始。也就是说循环神经网络的一个神经元的某些输出可以作为其输入再次传入神经元，达到信息循环利用的目的。</p>
+<p>  我们将RNN中的循环展开成一个个串联的结构，发现每个结构除了有输入数据<em>_x<sub>i</sub>_</em>之外还有前一个结构的输出作为输入。这种串联结构天然适合时间序列数据的处理和分析。实际上每层神经网络又是相同的，所以我们只需要训练一层RNN。</p>
 
           
         
