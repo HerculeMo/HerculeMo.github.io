@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AndrewMoTechStep">
 <meta property="og:description" content="词嵌入使用gensim工具，先下载工具 1pip install --upgrade gensim Load Stanford’s GloVe Embeddingsword2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在NLP实际应用中偏向使用GloVe。 像是word2vec一样，GloVe研究者提供了很多预训练模型供选择。gensim就是这么一个工具用来下载并使">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T14:51:42.855Z">
+<meta property="og:updated_time" content="2019-01-05T14:54:03.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP自学——词向量的理解">
 <meta name="twitter:description" content="词嵌入使用gensim工具，先下载工具 1pip install --upgrade gensim Load Stanford’s GloVe Embeddingsword2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在NLP实际应用中偏向使用GloVe。 像是word2vec一样，GloVe研究者提供了很多预训练模型供选择。gensim就是这么一个工具用来下载并使">
@@ -321,8 +321,7 @@
 </ul>
 <p>详细介绍请看<a href="https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">bingo</a></p>
 <p>这里只对T-SNE做简单介绍，T-SNE目的就是把X(原始高维数据)转换成Z(指定低维度的数据)。t-SNE首先将距离转换为条件概率来表达点与点之间的相似度，距离通过欧式距离算得，S(x^i,x^j)表示求 x^i,x^j之间的欧式距离。计算原始高维数据X与转换后的低维数据Z的公式如下所示。</p>
-<p>$$<br>P(x^j | x^i) = \frac{S(x^i,x^j)}{\sum_{k\neq i}S(x^i,x^k) }</p>
-<p>Q(z^j | z^i) = \frac{S’(z^i,z^j)}{\sum_{k\neq i}S’(z^i,z^k) }<br>$$<br>计算完X数据之间的的概率P(x^j | x^i) 和Z数据之间的概率$Q(z^j | z^i)$之后，接下来就是我们 的目的就是P和Q连个分布尽可能的接近，也就是要是如下公式的KL散度尽可能小。<br>$$<br>L = \sum KL(P(<em>|x^i)||Q(</em>|z^i)) = \sum \sum p(x^j|x^i)log\frac{P(x^j | x^i)}{Q(z^j | z^i)}<br>$$<br>T-SNE自从问世之后吊打一众降维算法，据说LargeVis比T-SNE还厉害，但是目还没有源码。让我们拭目以待。</p>
+<p>$$<br>P(x^j | x^i) = \frac{S(x^i,x^j)}{\sum_{k\neq i}S(x^i,x^k) }<br>Q(z^j | z^i) = \frac{S’(z^i,z^j)}{\sum_{k\neq i}S’(z^i,z^k) }<br>$$<br>计算完X数据之间的的概率P(x^j | x^i) 和Z数据之间的概率Q(z^j | z^i)之后，接下来就是我们 的目的就是P和Q连个分布尽可能的接近，也就是要是如下公式的KL散度尽可能小。<br>$$<br>L = \sum KL(P(<em>|x^i)||Q(</em>|z^i)) = \sum \sum p(x^j|x^i)log\frac{P(x^j | x^i)}{Q(z^j | z^i)}<br>$$<br>T-SNE自从问世之后吊打一众降维算法，据说LargeVis比T-SNE还厉害，但是目还没有源码。让我们拭目以待。</p>
 
       
     </div>
@@ -695,6 +694,8 @@
   
 
   
+  
+
 
   
 
