@@ -305,8 +305,8 @@
 <h2 id="Load-Stanford’s-GloVe-Embeddings"><a href="#Load-Stanford’s-GloVe-Embeddings" class="headerlink" title="Load Stanford’s GloVe Embeddings"></a>Load Stanford’s GloVe Embeddings</h2><p>word2vec和GloVe都是一种词分类模型，具体哪里不一样，这里不展开，但是研究者在NLP实际应用中偏向使用GloVe。</p>
 <p>像是word2vec一样，GloVe研究者提供了很多预训练模型供选择。gensim就是这么一个工具用来下载并使用这些预训练模型的。</p>
 <p>这里以载入glove.6B.100d.txt为例子。</p>
-<p>因为国内的渣网，直接去<a href="https://nlp.stanford.edu/projects/glove/下载极慢，建议百度网盘搜索相关资源下载好之后再载入。" target="_blank" rel="noopener">https://nlp.stanford.edu/projects/glove/下载极慢，建议百度网盘搜索相关资源下载好之后再载入。</a></p>
-<p>这里的glove.6B.100d.txt属于glove.6B.zip，链接<a href="https://pan.baidu.com/s/1xW5dImTYAM5UR3787WgeSg。下载好之后解压，里面有4个txt文件。" target="_blank" rel="noopener">https://pan.baidu.com/s/1xW5dImTYAM5UR3787WgeSg。下载好之后解压，里面有4个txt文件。</a></p>
+<p>因为国内的渣网，直接去<a href="https://nlp.stanford.edu/projects/glove/" target="_blank" rel="noopener">nlp.Stanford</a> 下载极慢，建议百度网盘搜索相关资源下载好之后再载入。</p>
+<p>这里的glove.6B.100d.txt属于glove.6B.zip，链接<a href="https://pan.baidu.com/s/1xW5dImTYAM5UR3787WgeSg" target="_blank" rel="noopener">百度云</a>下载好之后解压，里面有4个txt文件。</p>
 <p>要使用model装在必须先将txt文件转换成word2vec文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.scripts.glove2word2vec <span class="keyword">import</span> glove2word2vec</span><br><span class="line">glove_input_file = <span class="string">'glove.6B.100d.txt'</span></span><br><span class="line">word2vec_output_file = <span class="string">'glove.6B.100d.txt.word2vec'</span></span><br><span class="line">glove2word2vec(glove_input_file, word2vec_output_file)</span><br></pre></td></tr></table></figure>
 <p>然后装载模型，并且输出一个（king - man）+ woman = ？</p>
@@ -319,7 +319,7 @@
 <li>线性降维：PCA（Principal Componets Analysis),LDA(Linear Discriminant Analysis), MDS(Classical Multidimensional Scaling)</li>
 <li>非线性降维：Isomap(Isometric Mapping),LLE(Locally Linear Embedding),LE(Laplacian Eigenmaps),非线性降维中用到的方法大多属于流形学习方法。</li>
 </ul>
-<p>详细介绍请看<a href="https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/</a></p>
+<p>详细介绍请看<a href="https://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">bingo</a></p>
 <p>这里只对T-SNE做简单介绍，T-SNE目的就是把X(原始高维数据)转换成Z(指定低维度的数据)。t-SNE首先将距离转换为条件概率来表达点与点之间的相似度，距离通过欧式距离算得，S(x^i,x^j)表示求 x^i,x^j之间的欧式距离。计算原始高维数据X与转换后的低维数据Z的公式如下所示。</p>
 <p>$$<br>P(x^j | x^i) = \frac{S(x^i,x^j)}{\sum_{k\neq i}S(x^i,x^k) }</p>
 <p>Q(z^j | z^i) = \frac{S’(z^i,z^j)}{\sum_{k\neq i}S’(z^i,z^k) }<br>$$<br>计算完X数据之间的的概率P(x^j | x^i) 和Z数据之间的概率$Q(z^j | z^i)$之后，接下来就是我们 的目的就是P和Q连个分布尽可能的接近，也就是要是如下公式的KL散度尽可能小。<br>$$<br>L = \sum KL(P(<em>|x^i)||Q(</em>|z^i)) = \sum \sum p(x^j|x^i)log\frac{P(x^j | x^i)}{Q(z^j | z^i)}<br>$$<br>T-SNE自从问世之后吊打一众降维算法，据说LargeVis比T-SNE还厉害，但是目还没有源码。让我们拭目以待。</p>
